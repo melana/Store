@@ -1,0 +1,4 @@
+<div *ngIf="products$ | async as products" class="dashboard">
+    <div *ngFor="let product of products">{{product.title}}</div>
+</div>
+
