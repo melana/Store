@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 import { FbResponse } from './interfaces';
-import { ProductComponent } from '../product/product.component';
 
 
 @Injectable({
@@ -27,7 +26,8 @@ export class ProductService {
   getAll() {
     return this.http.get(`${environment.fbDbUrl}/products.json`)
     .pipe( map ( (res: any) => {
-      return Object.keys(res)    
+      console.log(res);
+      return Object.keys(res)
       .map( key => ({
         ...res[key],
         id: key,
@@ -35,6 +35,5 @@ export class ProductService {
       }))
     
     }))
-  
   }
 }

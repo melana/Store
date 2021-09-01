@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '../shared/interfaces';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product',
@@ -7,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() product:any
+  @Input()product: any;
 
   constructor() { }
 

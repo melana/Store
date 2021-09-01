@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { QuillModule } from 'ngx-quill';
 import { AuthInterceptor } from './shared/auth.interseptor';
 import { ProductComponent } from './product/product.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProductComponent } from './product/product.component';
     AppRoutingModule,
     HttpClientModule,
     QuillModule.forRoot(),
+    CommonModule
   ],
   providers: [
     {

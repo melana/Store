@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/product.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main-page',
@@ -15,7 +16,8 @@ export class MainPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.products$ = this.productServ.getAll()
+    this.products$ = this.productServ.getAll();
+    console.log(this.products$)
   }
 
 }
