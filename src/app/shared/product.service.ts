@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { FbResponse } from './interfaces';
+import { FbResponse, Product } from './interfaces';
+import { Observable } from 'rxjs/internal/Observable';
 
 
 @Injectable({
@@ -10,30 +11,44 @@ import { FbResponse } from './interfaces';
 })
 export class ProductService {
 
-  constructor(private  http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  create(product:any) {
+  create(product: any) {
     return this.http.post(`${environment.fbDbUrl}/products.json`, product)
-    .pipe(map( (res : FbResponse | any) => {
-      return {
-        ...product,
-        id: res.name,
-        date: new Date(product.date)
-      }
-    }))
+      .pipe(map((res: FbResponse | any) => {
+        return {
+          ...product,
+          id: res.name,
+          date: new Date(product.date)
+        }
+      }))
   }
 
   getAll() {
     return this.http.get(`${environment.fbDbUrl}/products.json`)
-    .pipe( map ( (res: any) => {
-      console.log(res);
-      return Object.keys(res)
-      .map( key => ({
-        ...res[key],
-        id: key,
-        date: new Date(res[key].date)
+      .pipe(map((res: any) => {
+        return Object.keys(res)
+          .map(key => ({
+            ...res[key],
+            id: key,
+            date: new Date(res[key].date)
+          }))
+
       }))
-    
-    }))
+  }
+
+  getById(id: any){
+    return this.http.get(`${environment.fbDbUrl}/products/${id}.json`)
+      .pipe(map((res: any) => {
+        console.log(res)
+        return {
+          id: res.id, 
+          title: res.title,
+          photo: res.photo,
+          info: res.info,
+          price: res.price,
+          date: res.date
+        }
+      }))
   }
 }

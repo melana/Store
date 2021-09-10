@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../shared/product.service';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { Product } from '../shared/interfaces';
 
 @Component({
   selector: 'app-main-page',
@@ -9,8 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class MainPageComponent implements OnInit {
 
-  products$: any
-
+  products$!: Observable<Product[]>;
   constructor(
     private productServ: ProductService
   ) { }
