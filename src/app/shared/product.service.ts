@@ -42,6 +42,7 @@ export class ProductService {
       .pipe(map((res: any) => {
         console.log(res)
         return {
+          type: res.type,
           id: res.id, 
           title: res.title,
           photo: res.photo,
@@ -50,5 +51,13 @@ export class ProductService {
           date: res.date
         }
       }))
+  }
+
+  remove (id: any) {
+    return this.http.delete(`${environment.fbDbUrl}/products/${id}.json`)
+  }
+
+  update(product: Product) {
+    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product)
   }
 }

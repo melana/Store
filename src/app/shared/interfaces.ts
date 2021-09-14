@@ -3,7 +3,7 @@ export interface FbResponse {
 }
 
 export interface Product {
-    type?: string 
+    type: string 
     id: string
     title: string
     photo: string 
