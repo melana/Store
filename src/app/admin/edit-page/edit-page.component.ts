@@ -32,10 +32,10 @@ export class EditPageComponent implements OnInit {
       this.product = product
       this.form = new FormGroup({
         type: new FormControl(this.product.type, Validators.required),
-      title: new FormControl(this.product.title, Validators.required),
-      photo: new FormControl(this.product.photo, Validators.required),
-      info: new FormControl(this.product.info, Validators.required),
-      price: new FormControl(this.product.price, Validators.required),
+        title: new FormControl(this.product.title, Validators.required),
+        photo: new FormControl(this.product.photo, Validators.required),
+        info: new FormControl(this.product.info, Validators.required),
+        price: new FormControl(this.product.price, Validators.required),
       })
 
     })
@@ -47,7 +47,7 @@ export class EditPageComponent implements OnInit {
     }
 
     this.submitted = true
-
+    
     this.productServ.update({
       ...this.product,
       type: this.form.value.type,
