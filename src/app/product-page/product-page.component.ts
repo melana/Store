@@ -25,4 +25,9 @@ export class ProductPageComponent implements OnInit {
     }))
   }
 
+  addProduct(product:any) {
+    this.productServ.addProduct(product)
+
+  }
+
 }
