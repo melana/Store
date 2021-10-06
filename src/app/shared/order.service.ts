@@ -13,7 +13,7 @@ export class OrderService {
 
   create(order:any) {
     return this.http.post(`${environment.fbDbUrl}/orders.json`, order)
-    .pipe(map( (res : FbResponse) => {
+    .pipe(map( (res:any) => {
       return {
         ...order,
         id: res.name,

@@ -20,28 +20,30 @@
 
     <form [formGroup]="form" (ngSubmit)="submit()">
 
+      
+
         <div class="form-control">
             <label for="name">Name</label>
             <input id="name" type="name" formControlName="name">
-            <div *ngIf="form.get('name').touched && form.get('name').invalid" class="validation">
-                <small *ngIf="form.get('name').errors.required">Enter your name</small>
+            <div *ngIf="form.controls['name'].touched && form.controls['name'].invalid" class="validation">
+                <small *ngIf="form.controls['name'].errors?.required">Enter your name</small>
             </div>
         </div>
 
-        
+     
         <div class="form-control">
             <label for="phone">Phone number</label>
             <input id="phone" type="phone" formControlName="phone">
-            <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="validation">
-                <small *ngIf="form.get('phone').errors.required">Enter your phone number</small>
+            <div *ngIf="form.controls['phone'].touched && form.controls['phone'].invalid" class="validation">
+                <small *ngIf="form.controls['phone'].errors?.required">Enter your phone</small>
             </div>
         </div>
 
         <div class="form-control">
             <label for="address">Address</label>
             <input id="address" type="address" formControlName="address">
-            <div *ngIf="form.get('address').touched && form.get('address').invalid" class="validation">
-                <small *ngIf="form.get('address').errors.required">Enter your address</small>
+            <div *ngIf="form.controls['address'].touched && form.controls['address'].invalid" class="validation">
+                <small *ngIf="form.controls['address'].errors?.required">Enter your address</small>
             </div>
         </div>
     
