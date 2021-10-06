@@ -34,8 +34,6 @@ export class OrderService {
     }))
   }
 
-
-
   remove (id: any) {
     return this.http.delete(`${environment.fbDbUrl}/orders/${id}.json`)
   }
