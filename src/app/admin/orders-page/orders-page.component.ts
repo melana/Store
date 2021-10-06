@@ -9,9 +9,9 @@ import { Subscription } from 'rxjs';
 })
 export class OrdersPageComponent implements OnInit {
 
-  orders = []
-  pSub: Subscription
-  rSub: Subscription
+  orders: any
+  pSub!: Subscription
+  rSub!: Subscription
 
 
   constructor(
@@ -34,9 +34,9 @@ export class OrdersPageComponent implements OnInit {
     }
   }
 
-  remove (id) {
+  remove (id: any) {
     this.rSub = this.orderServ.remove(id).subscribe( () => {
-      this.orders = this.orders.filter( order => order.id !== id)
+      this.orders = this.orders.filter( (order: any)=> order.id !== id)
     })
   }
 
