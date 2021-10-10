@@ -9,7 +9,7 @@ import { ProductService } from '../product.service';
 })
 export class MainLayoutComponent implements OnInit {
 
-  type = 'Phone'
+  type = 'all'
 
   constructor(
     private router: Router,

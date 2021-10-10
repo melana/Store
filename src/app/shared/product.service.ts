@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class ProductService {
 
-  type = 'Phone'
+  type = 'all'
   cartProducts : Product [] = []
 
   constructor(private http: HttpClient) { }

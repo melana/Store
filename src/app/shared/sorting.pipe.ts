@@ -7,10 +7,15 @@ import { Product } from './interfaces';
 export class SortingPipe implements PipeTransform {
 
   transform(products: Product[], type = ''): any {
-
-    return products.filter( product => {
-      return product.type == type
-    })
+     console.log (type)
+    if (type === 'all') {
+      return products
+    } else {
+      return products.filter(product => {
+        return product.type == type
+      })
+    }
   }
+
 
 }
