@@ -18,7 +18,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit() {
     this.products$ = this.productServ.getAll();
-    console.log(this.products$)
   }
 
 }

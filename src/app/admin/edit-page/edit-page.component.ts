@@ -28,7 +28,6 @@ export class EditPageComponent implements OnInit {
         return this.productServ.getById(params['id'])
       })
     ).subscribe(product => {
-      console.log(product)
       this.product = product
       this.form = new FormGroup({
         type: new FormControl(this.product.type, Validators.required),

@@ -38,13 +38,9 @@ export class LoginPageComponent implements OnInit {
     }
 
     this.auth.login(user).subscribe( res => {
-      console.log(res)
-      console.log(localStorage.getItem('fb-token-exp'))
       this.form.reset
       this.router.navigate(['/admin','dashboard'])
       this.submitted = false
-      
-
     }, () => {
       this.submitted = false
     }

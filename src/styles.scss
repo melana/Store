@@ -40,7 +40,9 @@ ul {
 }
 
 img {
-  width: 100%;
+  width: auto;
+  height: 250px;
+  object-fit: contain;
 }
 
 .container {

@@ -7,7 +7,6 @@ import { Product } from './interfaces';
 export class SortingPipe implements PipeTransform {
 
   transform(products: Product[], type = ''): any {
-     console.log (type)
     if (type === 'all') {
       return products
     } else {

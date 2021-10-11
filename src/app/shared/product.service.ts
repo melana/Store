@@ -43,7 +43,6 @@ export class ProductService {
   getById(id: any){
     return this.http.get(`${environment.fbDbUrl}/products/${id}.json`)
       .pipe(map((res: any) => {
-        console.log(res)
         return {
           type: res.type,
           id: res.id, 
